@@ -1,3 +1,4 @@
 # Rock Paper Scissor
-# The Odin Project
- Play rock paper scissor game against computer.
+## The Odin Project
+~~Test Strikethrough ~~
+Play rock paper scissor game against computer.
