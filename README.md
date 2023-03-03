@@ -1,3 +1,3 @@
 # Rock Paper Scissor
- The Odin Project
+# The Odin Project
  Play rock paper scissor game against computer.
