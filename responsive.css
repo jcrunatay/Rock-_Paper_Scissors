@@ -1,0 +1,64 @@
+
+@media only screen and (max-width: 1200px){
+
+    main .game_container .player_choices button,
+    main .game_container .computer_choices button,
+    main .game_container .player_selected_choiced,
+    main .game_container .computer_random_choiced{
+        width: 90px;
+        height: 120px;
+    } 
+    main .game_container {
+        flex-direction: column;
+    }
+
+    main div h2{
+        margin-bottom: unset;
+    }
+
+    main .game_container .player_choices,
+    main .game_container .computer_choices{
+        margin: 20px 20px;    
+    }
+
+    main .game_container .divider{
+        height: 120px;
+        margin: 0 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 768px){
+    
+    header h1{
+        font-size: 5rem;
+    }
+
+    main div h2{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+
+    header h1{
+        font-size: 3rem;
+    }
+
+    main .game_container .player_choices button,
+    main .game_container .computer_choices button,
+    main .game_container .player_selected_choiced,
+    main .game_container .computer_random_choiced{
+        width: 70px;
+        height: 100px;
+    } 
+
+    main .game_container div .player_text,
+    main .game_container div .computer_text{
+        font-size: 1.5rem;
+    }
+    main .messageResult{
+        font-size: 1.2rem;
+    }
+}
