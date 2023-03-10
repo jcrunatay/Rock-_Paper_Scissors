@@ -5,8 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock_Paper_Scissor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
+    <header class="display--none" id="header">
+        <h1><span class="rock_text text_animation--on text--animation ">
+                <span>R</span><span>O</span><span>C</span><span>K</span>
+            </span> 
+            <span class="paper_text text_animation--on  text_animation--delay">
+                <span>P</span><span>A</span><span>P</span><span>E</span><span>R</span>
+            </span> 
+            <span class="scissor_text text_animation--on  text_animation--delay2">
+                <span>S</span><span>C</span><span>I</span><span>S</span><span>S</span><span>O</span><span>R</span>
+            </span></h1>
+    </header>
+
+    <!-- ask user to start game page -->
+    <div class="start_game_container display--flex">
+        <div class="start_game_btn_container">
+            <button class="start_game_btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- end game page -->
+    <div class="end_game_container display--none">
+        <p class="end_game_message_result">You Win!</p>
+        <div class="end_game_btn_container">
+            <button class="end_game_btn">Play Again</button>
+        </div>
+    </div> 
+
+
+    <!-- startgame page -->
+    <main class="display--none" id="main">
+        <div class="game_container">
+            <h2>Choose your weapon. 5 wins to win the game. Goodluck & HaveFun!</h2>
+            <div class="player_choices">
+                <p class="player_text">Player : <span class="player_score">0</span></p>
+                <button class="btn_choice btn_rock_choice"></button>
+                <button class="btn_choice btn_paper_choice "></button>
+                <button class="btn_choice btn_scissor_choice "></button>
+            </div>
+
+            <div class="player_computer_choiced">
+                <div class="player_selected_choiced "></div>
+    
+                <div class="divider"></div>
+    
+                <div class="computer_random_choiced "></div>
+            </div>
+
+            <div class="computer_choices">
+                <p class="computer_text">Computer : <span class="computer_score">0</span> </p>
+                <button class="btn_rock_choice"></button>
+                <button class="btn_paper_choice"></button>
+                <button class="btn_scissor_choice"></button>
+            </div>
+            <p class="messageResult"></p>
+        </div>
+        
+        
+    </main>
+    
+        
+
     <script src="script.js"></script>
 </body>
 </html>

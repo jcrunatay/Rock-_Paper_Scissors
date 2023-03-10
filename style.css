@@ -1,0 +1,351 @@
+:root {
+    font-size: 62.5%;
+    --rock_bg :url('./image/rock.png');
+    --paper_bg :url('./image/paper.png');
+    --scissor_bg :url('./image/scissor.png');
+}
+
+body{
+    font-size: 1.6rem;
+    background-image: url('./image/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100%;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+header h1{
+    font-size: 6rem;
+    font-family: "Gloria Hallelujah",sans-serif;
+    text-align: center;
+}
+
+.text_animation--on{
+    animation: opacEffect 3.5s ease;
+    animation-iteration-count: infinite;
+}
+
+.text_animation--delay{
+    animation-delay: .5s;
+}
+
+.text_animation--delay2{
+    animation-delay: 1s;    
+}
+
+
+header h1 .rock_text span{
+    background: linear-gradient(90deg, rgba(246,78,188,1) 25%, rgba(253,135,224,1) 50%, rgba(246,78,188,1) 75%);
+}
+
+header h1 .paper_text span{
+    background: linear-gradient(90deg, rgba(68,171,250,1) 25%, rgba(94,228,252,1) 50%, rgba(68,171,250,1) 75%);
+}
+
+header h1 .scissor_text span{
+    background: linear-gradient(90deg, rgba(255,221,64,1) 25%, rgba(255,251,106,1) 50%, rgba(255,221,64,1) 75%);
+}
+
+header h1 .rock_text span,
+header h1 .paper_text span,
+header h1 .scissor_text span{
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes opacEffect{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+/*
+    Start Game
+*/
+
+body .start_game_container, .end_game_container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.start_game_btn_container,.end_game_btn_container{
+    width: 250px;
+    height: 100px;
+    -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 222, 179, 0.5);
+    transition: all 0.5s ease;
+
+}
+
+.start_game_container .start_game_btn,.end_game_container .end_game_btn{
+    font-family: 'Pacifico', sans-serif;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, rgba(246,78,148,1) 25%, rgba(68,171,250,1) 50%, rgba(255,221,64,1) 75%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.start_game_btn_container:hover{
+    transform: translateX(20px);
+    cursor: pointer;
+}
+
+.slide-right{
+    animation:slideRight 2.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.display--none{
+    display: none;
+}
+
+.display--flex{
+    display: flex;
+}
+
+.display--block{
+    display: block;
+}
+
+@keyframes slideRight{
+    from {
+        transform: translateX(0%);
+    }
+    
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+/*
+    GAME ENDS
+*/
+.end_game_container{
+    flex-direction: column;
+    z-index: 3;
+}
+
+.end_game_container .end_game_btn_container{
+    -webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+
+.end_game_btn_container:hover{
+    cursor: pointer;
+    transform: translateX(-20px);
+}
+
+
+.end_game_container .end_game_message_result{
+    font-size: 3rem;
+    display: block;
+    margin: 20px;
+}
+
+
+.slide-left{
+    animation:slideLeft 2.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideLeft{
+    from {
+        transform: translateX(0%);
+    }
+    
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+    Game Container
+*/
+main div h2,main .messageResult{
+    font-family: 'Pacifico', sans-serif;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+main .game_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    /* border: 1px solid yellow; */
+}
+
+main .game_container .player_choices,
+main .game_container .computer_choices{
+    margin: auto;
+    border: 3px solid wheat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 30px;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+main .game_container div .player_text,
+main .game_container div .computer_text{
+    width: 100%;
+    text-align: center;
+    font-family: cursive,sans-serif;
+    font-size: 2rem;
+}
+
+main .game_container .divider{
+    border: 3px solid wheat;
+    height: 200px;
+    margin: 20px;
+}
+
+main .game_container .player_choices button,
+main .game_container .computer_choices button{
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+main .game_container .player_choices button:hover{
+    transform: translateY(-5px);
+}
+
+main .game_container .player_computer_choiced{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main .game_container .player_selected_choiced,
+main .game_container .computer_random_choiced{
+    width: 100px;
+    height: 150px;
+    border: none;
+    /* background-image: var(--rock_bg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+
+}
+main .game_container .computer_random_choiced{
+    transform: rotate(-90deg);
+}
+
+
+main .game_container .btn_rock_choice{
+    background-image: var(--rock_bg);
+}
+
+main .game_container .btn_paper_choice{
+    background-image: var(--paper_bg);
+}
+
+main .game_container .btn_scissor_choice{
+    background-image: var(--scissor_bg);
+}
+
+main .game_container button{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.fadeInRight{
+    animation: fadeInRight 2s ease;
+}
+
+.fadeInLeft{
+    animation: fadeInLeft 2s ease;
+}
+
+
+
+.rock-bg{
+    background-image: var(--rock_bg);
+}
+
+.paper-bg{
+    background-image: var(--paper_bg);
+}
+
+.scissor-bg{
+    background-image: var(--scissor_bg);
+}
+
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-80px) rotate(90deg);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0) rotate(90deg);
+
+    }
+}
+
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(80px) rotate(-90deg);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0) rotate(-90deg);
+
+    }
+}
